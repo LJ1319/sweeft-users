@@ -26,7 +26,7 @@ export default function Home() {
         return [...prevUsers, ...newUsers];
       });
       setLoading(false);
-    }, 1000);
+    }, 100);
 
     return () => clearTimeout(timeoutId);
   }, [loading, page, size]);
@@ -43,9 +43,9 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="my-2.5">
       <UserList users={users} />
       {loading && <Loading />}
-    </>
+    </div>
   );
 }
