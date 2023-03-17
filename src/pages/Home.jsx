@@ -43,7 +43,7 @@ export default function Home() {
   }
 
   return (
-    <div className="my-2.5">
+    <div className="my-2.5 mx-auto w-8/12">
       <UserList users={users} />
       {loading && <Loading />}
     </div>
