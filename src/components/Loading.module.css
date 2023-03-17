@@ -1,0 +1,62 @@
+.loading {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  background: white;
+  margin: 0 auto;
+}
+
+.pulse {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.pulse div {
+  box-sizing: content-box;
+}
+
+.pulse div {
+  position: absolute;
+  width: 15px;
+}
+
+.pulse div:nth-child(1) {
+  left: 15px;
+  background: #006400;
+  animation: pulse 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.2s;
+}
+
+.pulse div:nth-child(2) {
+  left: 37.5px;
+  background: #006400;
+  animation: pulse 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.1s;
+}
+
+.pulse div:nth-child(3) {
+  left: 60px;
+  background: #006400;
+  animation: pulse 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    top: 18px;
+    height: 64px;
+  }
+
+  50% {
+    top: 30px;
+    height: 40px;
+  }
+
+  100% {
+    top: 30px;
+    height: 40px;
+  }
+}

@@ -26,7 +26,7 @@ export default function Home() {
         return [...prevUsers, ...newUsers];
       });
       setLoading(false);
-    }, 100);
+    }, 1000);
 
     return () => clearTimeout(timeoutId);
   }, [loading, page, size]);

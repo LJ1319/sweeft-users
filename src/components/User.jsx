@@ -9,12 +9,12 @@ export default function User({ id, name, lastName, prefix, imageUrl, title }) {
       <div className="mx-auto w-72 border-[1px]">
         <img src={image} alt={`${prefix} ${name} ${lastName}`} />
         <div>
-          <p className="px-2 pt-1">
+          <p className="px-2">
             <strong>
               {prefix} {name} {lastName}
             </strong>
           </p>
-          <p className="px-2 pt-1">{title}</p>
+          <p className="px-2">{title}</p>
         </div>
       </div>
     </div>
