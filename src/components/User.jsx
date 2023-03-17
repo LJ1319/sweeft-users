@@ -1,11 +1,12 @@
+import { useState } from "react";
+
 export default function User({ id, name, lastName, prefix, imageUrl }) {
+  let random = Math.floor(Math.random() * 10 + 1);
+  const [image, setImage] = useState(() => `${imageUrl}?v${random}`);
+
   return (
     <div>
-      {id > 10 ? (
-        <img src={`${imageUrl}?v2`} alt="" />
-      ) : (
-        <img src={`${imageUrl}?v1`} alt="" />
-      )}
+      <img src={image} alt={`${prefix} ${name} ${lastName}`} />
     </div>
   );
 }
