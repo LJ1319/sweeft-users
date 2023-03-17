@@ -31,6 +31,17 @@ export default function Home() {
     return () => clearTimeout(timeoutId);
   }, [loading, page, size]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  async function handleScroll() {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+      setLoading(true);
+      setPage((prevPage) => prevPage + 1);
+    }
+  }
+
   return (
     <>
       <UserList users={users} />
