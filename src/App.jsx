@@ -1,7 +1,14 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SingleUser from "./pages/SingleUser";
+
 export default function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">Sweeft Users</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="user/:id" element={<SingleUser />} />
+      </Routes>
+    </Router>
   );
 }
