@@ -4,7 +4,7 @@ export default function UserInfo({ user }) {
       <img
         width={270}
         height={200}
-        src={user.imageUrl}
+        src={`${user.imageUrl}?v${user.id}`}
         alt={`${user.prefix} ${user.name} ${user.lastName}`}
       />
       <fieldset className="ml-4 w-full border-2 border-black px-2 py-1">
