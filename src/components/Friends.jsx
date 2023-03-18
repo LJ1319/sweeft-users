@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { usePrevLocation } from "../hooks/usePrevLocation";
 import Loading from "./Loading";
 import UserList from "./UserList";
 
@@ -11,9 +9,6 @@ const PAGE_NUMBER = 1;
 const SIZE = 20;
 
 export default function Friends({ userId }) {
-  const location = useLocation();
-  const prevLocation = usePrevLocation(location);
-
   const [friends, setFriends] = useState([]);
   const [page, setPage] = useState(PAGE_NUMBER);
   const [size, setSize] = useState(SIZE);
@@ -55,7 +50,7 @@ export default function Friends({ userId }) {
     }, 1000);
 
     return () => clearTimeout(timeoutId);
-  }, [page, size]);
+  }, [loading, page, size]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -70,9 +65,6 @@ export default function Friends({ userId }) {
 
   return (
     <div>
-      Friends Component
-      <h2>PREV:{prevLocation.pathname}</h2>
-      <h2>LOC:{location.pathname}</h2>
       <div>
         <h2 className="m-6 text-2xl font-bold">Friends: </h2>
         <UserList users={friends} />

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function User({ id, name, lastName, prefix, imageUrl, title }) {
   return (
-    <div className="h-72">
-      <div className="mx-auto w-72 border-[1px]">
+    <div className="2xl:h-72">
+      <div className="mx-auto w-2/3 border-[1px] 2xl:w-72">
         <Link to={`/user/${id}`}>
           <img
             src={`${imageUrl}?v${id}`}

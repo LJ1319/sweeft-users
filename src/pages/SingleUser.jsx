@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Friends from "../components/Friends";
 import UserInfo from "../components/UserInfo";
 
@@ -29,8 +30,15 @@ export default function SingleUser() {
   }, [userId]);
 
   return (
-    <div className="mx-auto w-8/12 border-[1px]">
+    <div className="mx-auto w-max 2xl:border-[1px]">
       {user && <UserInfo user={user} />}
+      {user && (
+        <Breadcrumbs
+          prefix={user.prefix}
+          name={user.name}
+          lastName={user.lastName}
+        />
+      )}
       <Friends userId={userId} />
     </div>
   );

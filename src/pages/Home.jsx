@@ -3,6 +3,7 @@ import axios from "axios";
 
 import UserList from "../components/UserList";
 import Loading from "../components/Loading";
+import { Outlet } from "react-router-dom";
 
 const BASE_URL =
   "http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com";
@@ -43,7 +44,7 @@ export default function Home() {
   }
 
   return (
-    <div className="my-2.5 mx-auto w-8/12">
+    <div className="my-2.5 mx-auto w-max">
       <UserList users={users} />
       {loading && <Loading />}
     </div>

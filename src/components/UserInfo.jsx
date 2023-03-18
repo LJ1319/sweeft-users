@@ -1,13 +1,13 @@
 export default function UserInfo({ user }) {
   return (
-    <div className="flex h-72 items-center justify-between p-6">
+    <div className="mb-96 flex h-72 flex-col items-center justify-between p-6 px-4 2xl:mb-0 2xl:flex-row">
       <img
         width={270}
         height={200}
         src={`${user.imageUrl}?v${user.id}`}
         alt={`${user.prefix} ${user.name} ${user.lastName}`}
       />
-      <fieldset className="ml-4 w-full border-2 border-black px-2 py-1">
+      <fieldset className="w-full border-2 border-black px-2 py-1 2xl:ml-4">
         <legend>Info</legend>
         <p>
           <strong>
@@ -31,7 +31,7 @@ export default function UserInfo({ user }) {
           <span className="underline">Job Type</span>: {user.jobType}
         </p>
       </fieldset>
-      <fieldset className="ml-2 h-max border-2 border-black px-2 py-1">
+      <fieldset className="w-full border-2 border-black px-2 py-1 2xl:ml-2 2xl:h-max 2xl:w-max">
         <legend>Address</legend>
         <p>
           <strong>
