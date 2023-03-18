@@ -1,6 +1,4 @@
 export default function UserInfo({ user }) {
-  console.log(user);
-
   return (
     <div className="flex h-72 items-center justify-between p-6">
       <img
